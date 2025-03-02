@@ -27,10 +27,11 @@ class ContactsListScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => EditContactScreen(
-                      contactName: contacts[index]["name"]!,
-                      contactPhone: contacts[index]["phone"]!,
-                    ),
+                    builder:
+                        (context) => EditContactScreen(
+                          contactName: contacts[index]["name"]!,
+                          contactPhone: contacts[index]["phone"]!,
+                        ),
                   ),
                 );
               },

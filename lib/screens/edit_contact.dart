@@ -4,13 +4,17 @@ class EditContactScreen extends StatefulWidget {
   final String contactName;
   final String contactPhone;
 
-  const EditContactScreen({super.key, required this.contactName, required this.contactPhone});
+  const EditContactScreen({
+    super.key,
+    required this.contactName,
+    required this.contactPhone,
+  });
 
   @override
-  _EditContactScreenState createState() => _EditContactScreenState();
+  EditContactScreenState createState() => EditContactScreenState();
 }
 
-class _EditContactScreenState extends State<EditContactScreen> {
+class EditContactScreenState extends State<EditContactScreen> {
   late TextEditingController _nameController;
   late TextEditingController _phoneController;
 
@@ -30,7 +34,7 @@ class _EditContactScreenState extends State<EditContactScreen> {
 
   void _saveContact() {
     // Here you would send the updated contact info to the backend
-    print("Updated Contact: ${_nameController.text}, ${_phoneController.text}");
+    debugPrint("Updated Contact: ${_nameController.text}, ${_phoneController.text}");
     Navigator.pop(context); // Go back to the previous screen
   }
 
@@ -52,10 +56,7 @@ class _EditContactScreenState extends State<EditContactScreen> {
               keyboardType: TextInputType.phone,
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _saveContact,
-              child: Text('Save'),
-            ),
+            ElevatedButton(onPressed: _saveContact, child: Text('Save')),
           ],
         ),
       ),
